@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
 int main() {
-    string startingPoint;
-    getline(cin, startingPoint);
+    // Read starting point
+    std::string startingPoint;
+    getline(std::cin, startingPoint);
     
+    // Parse it to extract staringX and startingY coordinate
     int commandX, commandY;
     int curNumber;
     int len = startingPoint.length();
@@ -38,13 +39,15 @@ int main() {
     currentX = numbers[0];
     currentY = numbers[1];
     
-    string command;
-    cin >> command;
+    // Read command 
+    std::string command;
+    std::cin >> command;
     
+    // Count exit point
     char currentCommand;    
     int stepX, stepY;
+    
     stepX = 1, stepY = 1;
-
     int commandSize = command.length();
     for (int i = 0; i < commandSize; i++)
         switch (command[i]) {
@@ -56,6 +59,7 @@ int main() {
                default: break;
         }
     
-    cout << "(" << currentX << ", " << currentY << ")" << endl;
+    // Print exit coordinates
+    std::cout << "(" << currentX << ", " << currentY << ")\n";
     return 0;   
 }
